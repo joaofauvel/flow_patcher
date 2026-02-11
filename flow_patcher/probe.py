@@ -76,6 +76,7 @@ def get_flow_version(app_path: Path) -> str:
 def _check_slice_padding(f: Any, slice_offset: int) -> int:
     """Calculate available padding in a Mach-O slice. Returns bytes or -1 on error."""
     f.seek(slice_offset)
+    # magic, cputype, cpusubtype, filetype, ncmds, sizeofcmds, ...
     try:
         header = f.read(32)
         if len(header) < 32:
@@ -90,6 +91,7 @@ def _check_slice_padding(f: Any, slice_offset: int) -> int:
     header_size = 32
     cmds_end = slice_offset + header_size + sizeofcmds
 
+    # Find first segment data offset
     f.seek(slice_offset + header_size)
     first_data = None
 
@@ -116,7 +118,8 @@ def _check_slice_padding(f: Any, slice_offset: int) -> int:
                     sect_header = f.read(80)
                     if len(sect_header) < 80:
                         break
-                    # offset is at 48
+                    # section headers start with sectname(16)+segname(16)+addr(8)+size(8)+offset(4)
+                    # offset is at 16+16+8+8 = 48
                     sect_offset = int(struct.unpack("<I", sect_header[48:52])[0])
                     if sect_offset > 0:
                         candidate = slice_offset + sect_offset
