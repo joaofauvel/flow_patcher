@@ -18,7 +18,7 @@ and preserve user data from the App Store installation.
 
 | Flow Version | macOS | Status | Date |
 |:---:|:---:|:---:|:---:|
-| 4.6.1 | Tahoe 26.x | ✅ Working | 2026-02 |
+| 4.6.1 | Tahoe 26.x | Working | 2026-02 |
 
 > [!NOTE]
 > Flow is distributed exclusively via the Mac App Store. Apple does not
@@ -87,18 +87,29 @@ It hooks several runtime entry points:
 
 ```
 flow_patcher/
-  cli.py           Command-line interface (patch / restore)
+  __init__.py
+  cli.py           Command-line interface (patch / restore / probe)
   inject.py        Mach-O LC_LOAD_DYLIB injector
   patch_dylib.m    ObjC dylib source (the actual hooks)
-tests/
-  test_inject.py   Mach-O injector tests (synthetic binaries)
-  test_cli.py      CLI command and helper tests
+  probe.py         Flow.app compatibility checker
 frida/
   script.js        Frida hook used during initial reverse engineering
   diag.js          Diagnostic disassembler for identifying call sites
   example.py       Frida loader script
+tests/
+  conftest.py      Pytest fixtures
+  test_cli.py      CLI command and helper tests
+  test_cli_probe.py CLI probe command tests
+  test_dylib.m     Standalone dylib tests
+  test_dylib_hooks.py Tests for dylib hooks
+  test_inject.py   Mach-O injector tests (synthetic binaries)
+  test_integration.py Integration tests with live Flow.app
+  test_probe.py    Probe logic tests
+compatibility.json Known-good configurations for probe
+EXECUTION_FLOW.md  Detailed binary execution flow documentation
 justfile           Task runner shortcuts
 pyproject.toml     uv/pip project metadata
+README.md          This file
 ```
 
 ## Version Probe
