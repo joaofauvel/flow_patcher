@@ -1,5 +1,6 @@
 # flow-patcher
 
+> [!IMPORTANT]
 > **Please support the developer!** Flow is an excellent focus timer built with
 > care. If you find it useful, [**buy it**](https://www.flow.app).
 > This project exists for educational purposes and personal use.
