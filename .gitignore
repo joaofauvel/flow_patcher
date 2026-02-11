@@ -1,0 +1,15 @@
+*.dylib
+*.log
+*.bak
+__pycache__/
+*.egg-info/
+.DS_Store
+Flow.app/
+dist/
+build/
+.venv/
+.coverage
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+compatibility.json

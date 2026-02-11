@@ -1,0 +1,29 @@
+{
+  "version": "4.6.1",
+  "architectures": [
+    "x86_64",
+    "arm64"
+  ],
+  "padding": {
+    "x86_64": 232,
+    "arm64": 200
+  },
+  "classes": {
+    "RCEntitlementInfo": true,
+    "NSPersistentContainer": true,
+    "FIRAnalytics": true,
+    "FIRAnalyticsConfiguration": true,
+    "FIRHeartbeatLogger": true,
+    "GDTCORTransport": false
+  },
+  "selectors": {
+    "isActive": true,
+    "loadPersistentStoresWithCompletionHandler:": true,
+    "logEventWithName:parameters:": false
+  },
+  "verdict": true,
+  "details": [
+    "Missing optional classes (hooks will skip): GDTCORTransport",
+    "Missing optional selectors (hooks will skip): logEventWithName:parameters:"
+  ]
+}
