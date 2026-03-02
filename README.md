@@ -20,6 +20,7 @@ and preserve user data from the App Store installation.
 | Flow Version | macOS | Status | Date |
 |:---:|:---:|:---:|:---:|
 | 4.6.1 | Tahoe 26.x | Working | 2026-02 |
+| 4.7.0 | Tahoe 26.x | Working | 2026-03 |
 
 > [!NOTE]
 > Flow is distributed exclusively via the Mac App Store. Apple does not
