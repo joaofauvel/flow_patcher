@@ -5,8 +5,8 @@
     "arm64"
   ],
   "padding": {
-    "x86_64": 232,
-    "arm64": 200
+    "x86_64": 248,
+    "arm64": 208
   },
   "classes": {
     "RCEntitlementInfo": true,
