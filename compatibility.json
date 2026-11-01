@@ -1,11 +1,11 @@
 {
-  "version": "4.9.2",
+  "version": "5.0.0",
   "architectures": [
     "x86_64",
     "arm64"
   ],
   "padding": {
-    "x86_64": 248,
+    "x86_64": 240,
     "arm64": 208
   },
   "classes": {
