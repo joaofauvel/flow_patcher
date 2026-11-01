@@ -23,6 +23,7 @@ and preserve user data from the App Store installation.
 | 4.7.0 | Tahoe 26.x | Working | 2026-03 |
 | 4.8.0 | Tahoe 26.x | Working | 2026-03 |
 | 4.9.2 | Tahoe 26.x | Working | 2026-08 |
+| 5.0.0 | Tahoe 26.x | Working | 2026-11 |
 
 
 > [!NOTE]
